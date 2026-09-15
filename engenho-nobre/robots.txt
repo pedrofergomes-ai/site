@@ -1,0 +1,9 @@
+# Arquivo robots.txt para Engenho Nobre
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /produtos.html
+Disallow: /404.html
+
+Sitemap: https://www.engenhonobre.com.br/sitemap.xml

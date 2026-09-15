@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- ======================= HEADERS DE SEGURANÇA (HTTP METAS) ======================= -->
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Engenho Nobre | Cachaça artesanal e bioconstrução na Paraíba</title>
+<meta name="description" content="Descubra o Engenho Nobre, o 1º engenho com bioconstrução da Paraíba. Cachaças e runs artesanais premiados, produzidos com rigor e tradição. Compre direto da origem!">
+<link rel="icon" href="assets/images/logo.png">
+
+<!-- ======================= OPEN GRAPH (WHATSAPP, FACEBOOK, LINKEDIN) ======================= -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.engenhonobre.com.br/">
+<meta property="og:title" content="Engenho Nobre | Cachaça artesanal e bioconstrução na Paraíba">
+<meta property="og:description" content="Descubra o Engenho Nobre, o 1º engenho com bioconstrução da Paraíba. Cachaças e runs artesanais premiados, produzidos com rigor e tradição. Compre direto da origem!">
+<meta property="og:image" content="https://www.engenhonobre.com.br/assets/images/og-image.jpg">
+<meta property="og:image:alt" content="Engenho Nobre - Cachaças Premiadas">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ======================= TWITTER / X CARDS ======================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.engenhonobre.com.br/">
+<meta name="twitter:title" content="Engenho Nobre | Cachaça artesanal e bioconstrução na Paraíba">
+<meta name="twitter:description" content="Descubra o Engenho Nobre, o 1º engenho com bioconstrução da Paraíba. Cachaças e runs artesanais premiados.">
+<meta name="twitter:image" content="https://www.engenhonobre.com.br/assets/images/og-image.jpg">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          night: '#1E2923',
+          surface: '#FFFFFF',
+          ink: '#1E2220',
+          canaGreen: '#1B4D2E',
+          canaLight: '#2CA03B',
+          canaAccent: '#38A169',
+          cream: '#F4F7F4',
+          creamCard: '#FFFFFF',
+        },
+        fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+      }
+    }
+  }
+</script>
+
+<style>
+  body, h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+  
+  .glass-header { background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(12px); }
+  .badge-ring { border: 1px solid rgba(30, 34, 32, 0.08); }
+
+  .ai-hq-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: high-quality;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F4F7F4; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+  
+  html, body { overflow-x: hidden; width: 100%; }
+</style>
+</head>
+
+<body class="antialiased selection:bg-canaLight/30 selection:text-night font-sans bg-[#F9FBF9] text-gray-800">
+
+<!-- ======================= HEADER ======================= -->
+<header class="glass-header fixed top-0 inset-x-0 z-50 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
+    <a href="#topo" class="flex items-center gap-3 group">
+      <img src="assets/images/logo.png" alt="Engenho Nobre" class="h-10 w-auto transition-transform group-hover:scale-105 ai-hq-image">
+      <span class="text-gray-900 font-bold tracking-wide text-lg hidden sm:inline">Engenho Nobre</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-gray-600 text-sm font-medium">
+      <a href="#premios" class="hover:text-canaLight transition-colors">Prêmios</a>
+      <a href="#sobre" class="hover:text-canaLight transition-colors">A História</a>
+      <a href="#bioconstrucao" class="hover:text-canaLight transition-colors">Bioconstrução</a>
+      <a href="produtos.html" class="hover:text-canaLight transition-colors">Loja & Catálogo</a>
+      <a href="#avaliacoes" class="hover:text-canaLight transition-colors">Avaliações</a>
+      <a href="#contato" class="hover:text-canaLight transition-colors">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="produtos.html" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-canaLight hover:bg-canaGreen text-white font-bold text-sm transition-all shadow-md hover:scale-105">
+        Comprar Cachaça
+      </a>
+      <button id="mobile-menu-btn" class="lg:hidden text-gray-800 w-10 h-10 flex items-center justify-center" aria-label="Abrir menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200 px-6 py-5 space-y-3 max-h-[calc(100vh-5rem)] overflow-y-auto shadow-2xl">
+    <a href="#premios" class="block text-gray-800 font-medium py-2">Prêmios</a>
+    <a href="#sobre" class="block text-gray-800 font-medium py-2">A História</a>
+    <a href="#bioconstrucao" class="block text-gray-800 font-medium py-2">Bioconstrução</a>
+    <a href="produtos.html" class="block text-gray-800 font-medium py-2">Loja & Catálogo</a>
+    <a href="#avaliacoes" class="block text-gray-800 font-medium py-2">Avaliações</a>
+    <a href="#contato" class="block text-gray-800 font-medium py-2">Contato</a>
+  </div>
+</header>
+
+<!-- ======================= HERO SECTION ======================= -->
+<section id="topo" class="relative bg-white text-gray-900 pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden border-b border-gray-100">
+  <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#2CA03B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-12 items-center gap-10 md:gap-12 relative z-10">
+
+    <div class="md:col-span-7 max-w-xl text-center md:text-left order-2 md:order-1">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-canaLight/10 border border-canaLight/30 text-canaGreen text-xs font-semibold uppercase tracking-wider mb-6">
+        <span>Cruz do Espírito Santo, Paraíba</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.1] text-gray-900 tracking-tight">
+        Fresca, límpida e marcante: a essência nobre da verdadeira cachaça paraibana.
+      </h1>
+      <p class="mt-6 text-gray-600 text-base md:text-lg leading-relaxed">
+        Somos o primeiro engenho com bioconstrução da Paraíba — e produzimos cachaças reconhecidas com premiações oficiais pelo rigor artesanal. Venha sentir de perto.
+      </p>
+      
+      <div class="mt-8 md:mt-9 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4">
+        <a href="produtos.html" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-canaLight hover:bg-canaGreen text-white font-bold text-sm transition-all shadow-lg md:hover:scale-105">
+          Conhecer as Cachaças
+        </a>
+        <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 rounded-full border border-gray-300 text-gray-800 font-semibold text-sm hover:bg-gray-50 transition-colors">
+          Visitar o Engenho
+        </a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-gray-200 flex flex-wrap justify-center md:justify-start items-center gap-6 md:gap-8 text-gray-600 text-sm">
+        <div class="text-center md:text-left">
+          <p class="text-xl md:text-2xl font-bold text-canaGreen">Melhor Branca</p>
+          <p class="text-xs mt-0.5">Cúpula da Cachaça (2024)</p>
+        </div>
+        <div class="w-px h-10 bg-gray-200 hidden sm:block"></div>
+        <div class="text-center md:text-left">
+          <p class="text-xl md:text-2xl font-bold text-canaGreen">Ouro & Prata</p>
+          <p class="text-xs mt-0.5">Conc. Mundial Bruxelas</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:col-span-5 flex justify-center md:justify-end items-center order-1 md:order-2 mb-4 md:mb-0">
+      <img src="assets/images/logo1.png" alt="Logo Engenho Nobre" class="w-full max-w-[260px] sm:max-w-[340px] md:max-w-[480px] object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)] md:hover:scale-105 transition-transform duration-700 ai-hq-image">
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= SEÇÃO DE PRÊMIOS ======================= -->
+<section id="premios" class="bg-[#F4F7F4] py-20 md:py-24 text-gray-900 reveal">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+      <p class="text-canaGreen text-xs font-bold uppercase tracking-widest mb-3">Uma história de conquistas</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight text-gray-900">Paraibana de Cruz do Espírito Santo é eleita a MELHOR Cachaça Branca do Brasil</h2>
+      <p class="text-gray-600 leading-relaxed text-base">Uma evolução na busca de uma Cachaça cada vez melhor, mantendo sempre a qualidade e atenção na fabricação.</p>
+    </div>
+
+    <div class="mb-12 md:mb-16 rounded-3xl overflow-hidden border border-gray-200 shadow-xl bg-white p-3 md:p-6">
+      <div class="relative rounded-2xl overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+        <img src="assets/images/premios.jpeg" alt="Mural de Prêmios do Engenho Nobre" class="w-full h-full object-cover ai-hq-image md:hover:scale-[1.02] transition-transform duration-700">
+      </div>
+      <p class="text-center text-[10px] md:text-xs text-gray-500 mt-4 font-medium uppercase tracking-wider">Mural oficial de premiações e medalhas do Engenho Nobre</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm group flex flex-col">
+        <div class="aspect-[4/5] sm:aspect-[9/16] overflow-hidden relative">
+          <img src="assets/images/premio1.jpeg" alt="Nobre Cristal" class="w-full h-full object-fill md:group-hover:scale-105 transition-transform duration-500 ai-hq-image">
+        </div>
+        <div class="p-5 md:p-6 text-center bg-white border-t border-gray-100">
+          <p class="text-base md:text-lg font-bold text-gray-900">Nobre Cristal</p>
+          <p class="text-canaGreen text-xs mt-1 font-medium">8º Lugar — Categoria Branca (2026)</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm group flex flex-col">
+        <div class="aspect-[4/5] sm:aspect-[9/16] overflow-hidden relative">
+          <img src="assets/images/premio2.jpeg" alt="Arretada Vaquejada" class="w-full h-full object-fill md:group-hover:scale-105 transition-transform duration-500 ai-hq-image">
+        </div>
+        <div class="p-5 md:p-6 text-center bg-white border-t border-gray-100">
+          <p class="text-base md:text-lg font-bold text-gray-900">Arretada Vaquejada</p>
+          <p class="text-canaGreen text-xs mt-1 font-medium">5º Lugar — Categoria Blend (2026)</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl overflow-hidden border border-gray-200 shadow-sm group flex flex-col">
+        <div class="aspect-[4/5] sm:aspect-[9/16] overflow-hidden relative">
+          <img src="assets/images/premio3.jpeg" alt="Nobre Ocean" class="w-full h-full object-fill md:group-hover:scale-105 transition-transform duration-500 ai-hq-image">
+        </div>
+        <div class="p-5 md:p-6 text-center bg-white border-t border-gray-100">
+          <p class="text-base md:text-lg font-bold text-gray-900">Nobre Ocean</p>
+          <p class="text-canaGreen text-xs mt-1 font-medium">10º Lugar — Categoria Blend (2026)</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl overflow-hidden border-2 border-canaLight/60 shadow-md group flex flex-col">
+        <div class="aspect-[4/5] sm:aspect-[9/16] overflow-hidden relative">
+          <img src="assets/images/WhatsApp Image 2026-09-09 at 21.16.13 (1).jpeg" alt="Medalha de Prata" class="w-full h-full object-cover object-[75%_center] md:group-hover:scale-105 transition-transform duration-500 ai-hq-image">
+        </div>
+        <div class="p-5 md:p-6 text-center bg-white border-t border-gray-100">
+          <span class="inline-block px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen text-[10px] font-bold uppercase tracking-wider mb-2">Conquista Histórica</span>
+          <p class="text-base md:text-lg font-bold text-gray-900">Medalha de Prata</p>
+          <p class="text-canaGreen text-xs mt-1 font-medium">Concurso Mundial de Bruxelas (2017)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white rounded-3xl p-6 md:p-7 border-2 border-canaLight shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-canaGreen text-xs font-bold uppercase tracking-wider">Ranking da Cúpula da Cachaça</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-1">2024</h3>
+          <p class="text-gray-800 text-base font-semibold mt-2">Melhor Cachaça Branca do Brasil</p>
+        </div>
+        <p class="text-xs text-gray-500 mt-4 pt-3 border-t border-gray-100">Consagração máxima da qualidade pura.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 md:p-7 border border-gray-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-canaGreen text-xs font-bold uppercase tracking-wider">San Francisco World Spirits</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-1">2019</h3>
+          <p class="text-gray-800 text-base font-semibold mt-2">Medalha de Prata — Arretada Mandacaru</p>
+        </div>
+        <p class="text-xs text-gray-500 mt-4 pt-3 border-t border-gray-100">Reconhecimento internacional no prestigiado concurso americano.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 md:p-7 border border-gray-200 shadow-sm flex flex-col justify-between">
+        <div>
+          <span class="text-canaGreen text-xs font-bold uppercase tracking-wider">Concurso Mundial de Bruxelas</span>
+          <h3 class="text-2xl font-bold text-gray-900 mt-1">2018</h3>
+          <p class="text-gray-800 text-base font-semibold mt-2">Medalha de Ouro (Etapa Brasil)</p>
+        </div>
+        <p class="text-xs text-gray-500 mt-4 pt-3 border-t border-gray-100">A excelência da Nobre Branca reconhecida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= HISTÓRIA E O MESTRE ======================= -->
+<section id="sobre" class="bg-white py-20 md:py-24 reveal">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+    
+    <div class="sticky top-28 space-y-6">
+      <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-200 aspect-[4/5]">
+        <img src="assets/images/WhatsApp Image 2026-09-09 at 21.16.12 (1).jpeg" alt="Mestre Alambiqueiro" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 ai-hq-image">
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded-3xl shadow-sm border border-gray-200 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-canaLight/10 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5 text-canaGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-extrabold text-gray-900 text-base">Rigor Técnico Certificado</h4>
+            <p class="text-xs text-gray-500 font-medium">Formação de excelência em destilados</p>
+          </div>
+        </div>
+        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
+          Cada lote produzido no Engenho Nobre passa por rigoroso controle químico, sensorial e de fermentação, unindo a engenharia civil à ciência alambiqueira.
+        </p>
+        <div class="pt-3 border-t border-gray-200 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-xs font-bold border border-gray-200">Mestre Alambiqueiro</span>
+          <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-xs font-bold border border-gray-200">Mestre Cachacier</span>
+          <span class="px-3 py-1 rounded-full bg-white text-gray-700 text-xs font-bold border border-gray-200">ESALQ-USP</span>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <p class="text-canaGreen text-xs font-bold uppercase tracking-widest mb-3">Nossa Raiz</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+        A arte de um Engenheiro que virou Mestre Alambiqueiro
+      </h2>
+      <p class="mt-6 text-gray-600 leading-relaxed text-base md:text-lg">
+        Inaugurado em 2017 em Cruz do Espírito Santo, a apenas 30 km de João Pessoa, o Engenho Nobre nasceu com um compromisso inegociável: fabricar cachaças com profundo rigor técnico, respeito às normas legais e proteção ambiental.
+      </p>
+      <p class="mt-4 text-gray-600 leading-relaxed text-base md:text-lg">
+        Por trás dessa alquimia está <strong>Murilo Vilela Coelho</strong>. Engenheiro Civil por formação e sempre apreciador de destilados, ele decidiu no final de 2014 que mergulharia na produção de cachaça. Após firmar parceria com um produtor local de Sobrado, iniciou uma intensa jornada de especialização acadêmica e prática para dominar a arte da fermentação, destilação e elaboração de blends.
+      </p>
+
+      <div class="mt-14 md:mt-16 space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-canaLight/10 flex items-center justify-center">
+            <svg class="w-5 h-5 text-canaGreen" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+          </div>
+          <div>
+            <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900">A Jornada do Conhecimento</h3>
+            <p class="text-xs text-gray-500 font-medium">Especialização contínua e aprimoramento técnico</p>
+          </div>
+        </div>
+        
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2015</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Tornou-se Mestre Alambiqueiro e Mestre Cachacier pelo Cana Brasil em Itaverava (MG).</p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2016</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Realizou o “III Treinamento em Qualidade de Cachaça Envelhecida” e o “Workshop de Fundamentos e Composição de Blends” na ESALQ-USP, em Piracicaba (SP).</p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2017</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Participou do curso “A Ciência do Blend” realizado em João Pessoa pelo LABM e Cachaçarias Nobre de MG.</p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2018</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Aprofundou-se no “Percurso Multissensorial da Cachaça” com Mauricio Maia e Isadora Ribeiro, em Areia (PB).</p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2019</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Fez o curso “A Arte da Fermentação Cachaça e Rum” da Smart Yeast de Piracicaba, realizado em João Pessoa.</p>
+          </div>
+
+          <div class="bg-gray-50 p-5 rounded-3xl shadow-sm border border-gray-200 hover:border-canaLight/60 hover:shadow-md transition-all flex flex-col justify-between">
+            <span class="inline-block w-fit px-3 py-1 rounded-full bg-canaLight/10 text-canaGreen font-extrabold text-xs tracking-wider mb-3">2020</span>
+            <p class="text-sm text-gray-700 font-medium leading-relaxed">Expandiu a expertise com os cursos de Gin, Cachaça Avançada e Multissensorial pelo Inovbev, com a Dra. Aline Bortoletto.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= BIOCONSTRUÇÃO ======================= -->
+<section id="bioconstrucao" class="bg-[#F4F7F4] text-gray-900 py-20 md:py-24 reveal">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="max-w-3xl mb-12 md:mb-16">
+      <p class="text-canaGreen text-xs font-bold uppercase tracking-widest mb-3">Arquitetura viva</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold leading-tight text-gray-900">
+        O primeiro engenho com bioconstrução da Paraíba.
+      </h2>
+      <p class="mt-6 text-gray-600 leading-relaxed text-base md:text-lg">
+        Combinando a formação em Engenharia Civil com a paixão pela sustentabilidade, o Engenho Nobre adota uma abordagem inovadora desde o alicerce, utilizando <strong>eucaliptos da própria propriedade</strong> e <strong>telhas ecológicas provenientes de reciclagem</strong>. O grande destaque construtivo está na área de envelhecimento: as instalações utilizam <strong>paredes de terra compactada em malha raschel com cerca de 40 cm de espessura</strong>. Essa técnica pioneira na Paraíba não apenas reduz o impacto ambiental, mas garante um <strong>conforto térmico e de umidade ideal</strong>, fatores absolutamente essenciais para o repouso perfeito, a conservação e a maturação lenta das cachaças puras e dos blends de madeiras nobres.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="rounded-3xl overflow-hidden md:col-span-2 aspect-[4/3] md:aspect-auto border border-gray-200 shadow-xl bg-white">
+        <img src="assets/images/WhatsApp Image 2026-09-09 at 21.16.12.jpeg" alt="Domos do Engenho Nobre" loading="lazy" class="ai-hq-image w-full h-full object-cover">
+      </div>
+      
+      <div class="rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto border border-gray-200 shadow-xl bg-white">
+        <img src="assets/images/WhatsApp Image 2026-09-09 at 21.16.15 (1).jpeg" alt="Área externa" loading="lazy" class="ai-hq-image w-full h-full object-cover">
+      </div>
+
+      <div class="rounded-3xl overflow-hidden md:col-span-3 h-[280px] md:h-[520px] border border-gray-200 shadow-xl bg-white">
+        <img src="assets/images/WhatsApp Image 2026-09-09 at 21.16.14 (2).jpeg" alt="Vista panorâmica" loading="lazy" class="ai-hq-image w-full h-full object-cover" style="object-position: center 30%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PRODUTOS (PRÉVIA) ======================= -->
+<section id="produtos" class="bg-white py-20 md:py-24 reveal">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-14">
+      <div>
+        <p class="text-canaGreen text-xs font-bold uppercase tracking-widest mb-3">Loja virtual</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">As cachaças do Engenho Nobre</h2>
+        <p class="mt-2 text-gray-600 text-sm md:text-base">Uma prévia do catálogo. Veja todas, compare e monte seu pedido.</p>
+      </div>
+      <a href="produtos.html" class="inline-flex items-center justify-center px-7 py-3.5 rounded-2xl bg-canaGreen hover:bg-canaLight text-white font-bold text-sm transition-all shadow-md w-full md:w-auto text-center">
+        Ver Todas as Cachaças
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <a href="produtos.html" class="bg-gray-50 rounded-3xl p-6 border border-gray-200 shadow-sm hover:shadow-xl hover:border-canaLight transition-all duration-300 flex flex-col group text-gray-900">
+        <div class="py-6 mb-6 h-48 md:h-56 flex items-center justify-center relative overflow-hidden bg-white rounded-2xl border border-gray-100">
+          <div class="absolute inset-0 bg-gradient-to-b from-canaLight/5 to-transparent rounded-2xl opacity-60"></div>
+          <img src="assets/images/nobrecristal.jpeg" alt="Nobre Cristal 500 ml" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.1)] md:group-hover:scale-110 transition-transform duration-500 relative z-10 ai-hq-image">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-canaGreen transition-colors">Nobre Cristal</h3>
+        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Branca tradicional, leve e adocicada.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-canaGreen uppercase tracking-wider">Ver detalhes &rarr;</span>
+      </a>
+
+      <a href="produtos.html" class="bg-gray-50 rounded-3xl p-6 border border-gray-200 shadow-sm hover:shadow-xl hover:border-canaLight transition-all duration-300 flex flex-col group text-gray-900">
+        <div class="py-6 mb-6 h-48 md:h-56 flex items-center justify-center relative overflow-hidden bg-white rounded-2xl border border-gray-100">
+          <div class="absolute inset-0 bg-gradient-to-b from-canaLight/5 to-transparent rounded-2xl opacity-60"></div>
+          <img src="assets/images/nobrearretada.jpeg" alt="Arretada Vaquejada 750 ml" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.1)] md:group-hover:scale-110 transition-transform duration-500 relative z-10 ai-hq-image">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-canaGreen transition-colors">Arretada Vaquejada</h3>
+        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Blend de envelhecidas em carvalho, jaqueira e jequitibá rosa.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-canaGreen uppercase tracking-wider">Ver detalhes &rarr;</span>
+      </a>
+
+      <a href="produtos.html" class="bg-gray-50 rounded-3xl p-6 border border-gray-200 shadow-sm hover:shadow-xl hover:border-canaLight transition-all duration-300 flex flex-col group text-gray-900">
+        <div class="py-6 mb-6 h-48 md:h-56 flex items-center justify-center relative overflow-hidden bg-white rounded-2xl border border-gray-100">
+          <div class="absolute inset-0 bg-gradient-to-b from-canaLight/5 to-transparent rounded-2xl opacity-60"></div>
+          <img src="assets/images/nobreumburana.jpeg" alt="Nobre Umburana 500 ml" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.1)] md:group-hover:scale-110 transition-transform duration-500 relative z-10 ai-hq-image">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-canaGreen transition-colors">Nobre Umburana</h3>
+        <p class="text-gray-600 text-sm mt-2 leading-relaxed">100% umburana, notas marcantes de baunilha e canela.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-canaGreen uppercase tracking-wider">Ver detalhes &rarr;</span>
+      </a>
+
+      <a href="produtos.html" class="bg-gray-50 rounded-3xl p-6 border border-gray-200 shadow-sm hover:shadow-xl hover:border-canaLight transition-all duration-300 flex flex-col group text-gray-900">
+        <div class="py-6 mb-6 h-48 md:h-56 flex items-center justify-center relative overflow-hidden bg-white rounded-2xl border border-gray-100">
+          <div class="absolute inset-0 bg-gradient-to-b from-canaLight/5 to-transparent rounded-2xl opacity-60"></div>
+          <img src="assets/images/rumcorsario.jpeg" alt="Rum Corsário 40%" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.1)] md:group-hover:scale-110 transition-transform duration-500 relative z-10 ai-hq-image">
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-canaGreen transition-colors">Rum Corsário 40%</h3>
+        <p class="text-gray-600 text-sm mt-2 leading-relaxed">Envelhecido em carvalho americano novo.</p>
+        <span class="mt-6 inline-flex items-center gap-2 text-xs font-bold text-canaGreen uppercase tracking-wider">Ver detalhes &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= AVALIAÇÕES ======================= -->
+<section id="avaliacoes" class="bg-[#F4F7F4] py-20 md:py-28 text-gray-900 reveal relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-canaLight/10 border border-canaLight/30 text-canaGreen text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Experiências & Reconhecimento</span>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">O que dizem sobre o Engenho</h2>
+        <p class="text-gray-600 mt-3 text-sm md:text-base max-w-xl">Avaliações oficiais do Guia Mapa da Cachaça, especialistas e relatos inesquecíveis de visitantes.</p>
+      </div>
+
+      <div class="flex items-center gap-3 hidden md:flex">
+        <button onclick="scrollTestimonials(-1)" aria-label="Anterior" class="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-canaGreen hover:text-white text-gray-800 flex items-center justify-center transition-all shadow-sm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button onclick="scrollTestimonials(1)" aria-label="Próximo" class="w-12 h-12 rounded-full border border-gray-300 bg-white hover:bg-canaGreen hover:text-white text-gray-800 flex items-center justify-center transition-all shadow-sm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="testimonials-container" class="flex gap-4 md:gap-6 overflow-x-auto no-scrollbar scroll-smooth pb-6 snap-x snap-mandatory">
+      
+      <div class="w-[85vw] md:w-[calc(33.333%-16px)] shrink-0 snap-center bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-md flex flex-col justify-between hover:border-canaLight transition-colors">
+        <div>
+          <div class="flex gap-1 text-amber-500 mb-6">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="text-gray-700 leading-relaxed text-sm md:text-base italic">"O Engenho Nobre figura entre os dez melhores do Brasil, destacando-se nacionalmente pelo rigor técnico em suas cachaças. Em nossa avaliação às cegas com especialistas, obteve excelente desempenho de excelência."</p>
+        </div>
+        <footer class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-gray-900 text-sm">Painel de Especialistas</p>
+            <p class="text-[10px] md:text-xs text-canaGreen font-medium">Guia Mapa da Cachaça</p>
+          </div>
+        </footer>
+      </div>
+
+      <div class="w-[85vw] md:w-[calc(33.333%-16px)] shrink-0 snap-center bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-md flex flex-col justify-between hover:border-canaLight transition-colors">
+        <div>
+          <div class="flex gap-1 text-amber-500 mb-6">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="text-gray-700 leading-relaxed text-sm md:text-base italic">"No sábado dia 24/08 tivemos juntamente com vários amigos da Confraria da Lapada, uma experiência memorável visitando o engenho Nobre. Fomos muito bem recebidos pelo proprietário Murilo, que nos deu uma explanação minuciosa de todas as etapas do processo produtivo. Um sábado inesquecível!"</p>
+        </div>
+        <footer class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-gray-900 text-sm">Membros</p>
+            <p class="text-[10px] md:text-xs text-canaGreen font-medium">Confraria da Lapada</p>
+          </div>
+        </footer>
+      </div>
+
+      <div class="w-[85vw] md:w-[calc(33.333%-16px)] shrink-0 snap-center bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-md flex flex-col justify-between hover:border-canaLight transition-colors">
+        <div>
+          <div class="flex gap-1 text-amber-500 mb-6">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <p class="text-gray-700 leading-relaxed text-sm md:text-base italic">"Bebida extremamente aromática e intensa em sabores. A aguardente de cor densa e convidativa tem como peculiaridade ser macia e potente ao mesmo tempo. Você se surpreenderá!"</p>
+        </div>
+        <footer class="mt-8 pt-4 border-t border-gray-100 flex items-center justify-between">
+          <div>
+            <p class="font-bold text-gray-900 text-sm">Crítica Especializada</p>
+            <p class="text-[10px] md:text-xs text-canaGreen font-medium">O Alambiqueiro / Degustadores</p>
+          </div>
+        </footer>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTATO ======================= -->
+<section id="contato" class="bg-white text-gray-900 py-20 md:py-28 reveal relative overflow-hidden border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 relative z-10">
+    <div class="max-w-2xl mb-12 md:mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-canaLight/10 border border-canaLight/30 text-canaGreen text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Fale Conosco</span>
+      </div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">Venha nos visitar ou faça seu pedido</h2>
+      <p class="text-gray-600 mt-3 text-base md:text-lg leading-relaxed">PB 004, Km 20, S/N, Zona Rural — Cruz do Espírito Santo, Paraíba.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-10 md:gap-12 items-start">
+      <div class="space-y-6">
+        <div class="grid gap-4">
+          <a href="https://wa.me/5583996818192" target="_blank" rel="noopener" class="flex items-center gap-4 md:gap-5 p-4 md:p-5 rounded-3xl bg-gray-50 border border-gray-200 hover:border-canaLight transition-all group shadow-sm">
+            <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] md:text-xs text-canaGreen font-bold uppercase tracking-wider">WhatsApp Direto</p>
+              <p class="text-gray-900 font-bold text-lg md:text-xl mt-0.5">Murilo: (83) 99681-8192</p>
+            </div>
+          </a>
+
+          <a href="mailto:murilovcoelho@gmail.com" class="flex items-center gap-4 md:gap-5 p-4 md:p-5 rounded-3xl bg-gray-50 border border-gray-200 hover:border-canaLight transition-all group shadow-sm">
+            <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-canaGreen text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="md:w-7 md:h-7"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] md:text-xs text-canaGreen font-bold uppercase tracking-wider">E-mail de Contato</p>
+              <p class="text-gray-900 font-bold text-base md:text-xl mt-0.5">murilovcoelho@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://instagram.com/engenhonobre" target="_blank" rel="noopener" class="flex items-center gap-4 md:gap-5 p-4 md:p-5 rounded-3xl bg-gray-50 border border-gray-200 hover:border-canaLight transition-all group shadow-sm">
+            <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="md:w-7 md:h-7"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <p class="text-[10px] md:text-xs text-rose-600 font-bold uppercase tracking-wider">Rede Social</p>
+              <p class="text-gray-900 font-bold text-lg md:text-xl mt-0.5">@engenhonobre</p>
+            </div>
+          </a>
+        </div>
+
+        <form id="contact-form" class="bg-gray-50 rounded-3xl p-6 md:p-8 border border-gray-200 shadow-sm space-y-4" onsubmit="return sendContactWhatsapp(event)">
+          <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Envie uma mensagem rápida</h3>
+          <div>
+            <input required type="text" id="c-name" placeholder="Seu nome" maxlength="80" class="w-full px-4 md:px-5 py-3 md:py-4 rounded-2xl bg-white border border-gray-200 focus:border-canaLight outline-none text-sm text-gray-900 placeholder-gray-400 font-medium transition-colors">
+          </div>
+          <div>
+            <input required type="tel" id="c-phone" placeholder="Seu telefone" maxlength="25" class="w-full px-4 md:px-5 py-3 md:py-4 rounded-2xl bg-white border border-gray-200 focus:border-canaLight outline-none text-sm text-gray-900 placeholder-gray-400 font-medium transition-colors">
+          </div>
+          <div>
+            <textarea id="c-msg" rows="3" placeholder="Sua mensagem ou pedido" maxlength="400" class="w-full px-4 md:px-5 py-3 md:py-4 rounded-2xl bg-white border border-gray-200 focus:border-canaLight outline-none text-sm text-gray-900 placeholder-gray-400 font-medium transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 md:py-4 rounded-2xl bg-canaLight hover:bg-canaGreen text-white font-bold text-sm md:text-base transition-all shadow-md md:hover:scale-[1.02]">
+            Enviar Mensagem via WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden border border-gray-200 shadow-xl w-full h-[350px] lg:h-full lg:min-h-[600px] relative bg-gray-50">
+        <iframe
+          title="Localização do Engenho Nobre"
+          class="w-full h-full absolute inset-0 filter contrast-[1.05]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=PB%20004%20Km%2020%2C%20Cruz%20do%20Esp%C3%adrito%20Santo%2C%20PB&z=13&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-gray-900 text-white border-t border-gray-800 pt-16 md:pt-20 pb-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 md:gap-12 pb-12 md:pb-16 border-b border-gray-800">
+      <div class="lg:col-span-2 space-y-4 md:space-y-5">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="Engenho Nobre" class="h-10 md:h-12 w-auto ai-hq-image">
+          <span class="text-xl md:text-2xl font-bold tracking-wide">Engenho Nobre</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+          O primeiro engenho com bioconstrução da Paraíba. Cachaças artesanais premiadas nacional e internacionalmente, produzidas com rigor técnico e respeito ao meio ambiente.
+        </p>
+        <div class="pt-2 text-xs text-gray-400 space-y-1">
+          <p>📍 PB 004, Km 20, S/N, Zona Rural — Cruz do Espírito Santo, PB</p>
+          <p>📄 CNPJ: 00.000.000/0001-00</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 md:mb-5">Navegação</p>
+        <ul class="space-y-2.5 md:space-y-3 text-sm text-gray-400">
+          <li><a href="#premios" class="hover:text-canaLight transition-colors">Prêmios</a></li>
+          <li><a href="#sobre" class="hover:text-canaLight transition-colors">A História</a></li>
+          <li><a href="#bioconstrucao" class="hover:text-canaLight transition-colors">Bioconstrução</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Loja & Catálogo</a></li>
+          <li><a href="#avaliacoes" class="hover:text-canaLight transition-colors">Avaliações</a></li>
+          <li><a href="#contato" class="hover:text-canaLight transition-colors">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 md:mb-5">Destaques</p>
+        <ul class="space-y-2.5 md:space-y-3 text-sm text-gray-400">
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Nobre Cristal</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Arretada Vaquejada</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Nobre Umburana</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Rum Corsário</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Catálogo Completo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-sm md:text-base font-bold text-white uppercase tracking-wider mb-4 md:mb-5">Atendimento</p>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">
+          Agende sua visita ao engenho ou tire dúvidas diretamente com o Mestre Alambiqueiro.
+        </p>
+        <a href="https://wa.me/5583996818192" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canaGreen hover:bg-canaLight text-white font-bold text-xs transition-all shadow-md">
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="pt-8 md:pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left text-xs text-gray-400">
+      <p>© 2026 Engenho Nobre. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-full bg-gray-800 border border-gray-700 text-amber-300 font-medium">
+        <span>⚠️ Beba com moderação. Para maiores de 18 anos.</span>
+      </div>
+      <p>Desenvolvido para Mestre Murilo Vilela Coelho</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= WHATSAPP FLUTUANTE ======================= -->
+<a href="https://wa.me/5583996818192" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+  class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40 w-12 h-12 md:w-14 md:h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+  const WHATSAPP_NUMBER = '5583996818192';
+
+  function sendContactWhatsapp(e) {
+    e.preventDefault();
+    const rawName = document.getElementById('c-name').value;
+    const rawPhone = document.getElementById('c-phone').value;
+    const rawMsg = document.getElementById('c-msg').value;
+
+    const sanitize = (str) => str.replace(/<[^>]*>?/gm, '').trim();
+    const name = sanitize(rawName);
+    const phone = sanitize(rawPhone);
+    const msg = sanitize(rawMsg);
+
+    if (!name || !phone) {
+      alert('Por favor, preencha o nome e o telefone.');
+      return false;
+    }
+
+    const text = encodeURIComponent(`Olá, Engenho Nobre!\nMeu nome é *${name}* (${phone}).\n\nMensagem:\n${msg}`);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+    return false;
+  }
+
+  function scrollTestimonials(direction) {
+    const container = document.getElementById('testimonials-container');
+    const scrollAmount = container.clientWidth * 0.8;
+    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+
+  mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<!-- ======================= COOKIE CONSENT BANNER ======================= -->
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-sm z-[100] bg-white rounded-3xl p-6 border border-gray-200 shadow-2xl transform transition-transform duration-500 translate-y-full opacity-0 hidden">
+  <div class="flex items-start gap-4">
+    <div class="w-10 h-10 rounded-full bg-canaLight/10 flex items-center justify-center shrink-0 text-canaGreen">
+      <!-- Ícone de Cookie -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+        <path d="M8.5 8.5v.01"/><path d="M16 12.5v.01"/><path d="M12 16v.01"/><path d="M11 12.5v.01"/>
+      </svg>
+    </div>
+    <div class="space-y-3">
+      <h4 class="text-sm font-bold text-gray-900">Privacidade & Cookies</h4>
+      <p class="text-xs text-gray-600 leading-relaxed">
+        Utilizamos cookies para melhorar sua experiência em nosso site, personalizar o conteúdo e analisar nosso tráfego. Ao continuar navegando, você concorda com nossa política.
+      </p>
+      <div class="flex items-center gap-3 pt-2">
+        <button id="accept-cookies" class="w-full px-4 py-2.5 rounded-xl bg-canaGreen hover:bg-canaLight text-white font-bold text-xs transition-all shadow-sm">
+          Aceitar Todos
+        </button>
+        <button id="decline-cookies" class="w-full px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs transition-all shadow-sm">
+          Recusar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    const cookieStorageKey = 'engenhonobre_cookies_consent';
+
+    // Verifica se o cliente já respondeu antes
+    if (!localStorage.getItem(cookieStorageKey)) {
+      // Mostra o banner com animação subindo
+      cookieBanner.classList.remove('hidden');
+      setTimeout(() => {
+        cookieBanner.classList.remove('translate-y-full', 'opacity-0');
+      }, 100);
+    }
+
+    // Função para esconder com animação descendo
+    const hideBanner = () => {
+      cookieBanner.classList.add('translate-y-full', 'opacity-0');
+      setTimeout(() => {
+        cookieBanner.classList.add('hidden');
+      }, 500); // Tempo da transição
+    };
+
+    // Ações dos botões
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(cookieStorageKey, 'accepted');
+      hideBanner();
+    });
+
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem(cookieStorageKey, 'declined');
+      hideBanner();
+    });
+  });
+</script>
+<!-- ===================================================================== -->
+</body>
+</html>
