@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ======================= HEADERS DE SEGURANÇA E SEO ======================= -->
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Loja Oficial | Engenho Nobre</title>
+<meta name="description" content="Loja oficial Engenho Nobre. Compre cachaças artesanais premiadas, blends exclusivos e rums envelhecidos direto do engenho. Pagamento 100% seguro.">
+<link rel="icon" href="assets/images/logo.png">
+
+<!-- ======================= OPEN GRAPH (WHATSAPP, FACEBOOK, LINKEDIN) ======================= -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.engenhonobre.com.br/produtos.html">
+<meta property="og:title" content="Loja Oficial | Engenho Nobre">
+<meta property="og:description" content="Loja oficial Engenho Nobre. Compre cachaças artesanais premiadas, blends exclusivos e rums envelhecidos direto do engenho. Pagamento 100% seguro.">
+<meta property="og:image" content="https://www.engenhonobre.com.br/assets/images/og-image.jpg">
+<meta property="og:image:alt" content="Loja Oficial Engenho Nobre">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ======================= TWITTER / X CARDS ======================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.engenhonobre.com.br/produtos.html">
+<meta name="twitter:title" content="Loja Oficial | Engenho Nobre">
+<meta name="twitter:description" content="Compre cachaças artesanais premiadas, blends exclusivos e rums envelhecidos direto do engenho.">
+<meta name="twitter:image" content="https://www.engenhonobre.com.br/assets/images/og-image.jpg">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          night: '#1E2923',
+          surface: '#FFFFFF',
+          ink: '#1E2220',
+          canaGreen: '#1B4D2E',
+          canaLight: '#2CA03B',
+          canaAccent: '#38A169',
+          cream: '#F4F7F4',
+          creamCard: '#FFFFFF',
+        },
+        fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+      }
+    }
+  }
+</script>
+
+<style>
+  body, h1, h2, h3, h4, h5, h6, .font-display { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+  
+  .glass-header { background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(12px); }
+  .cart-panel { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .cart-panel.closed { transform: translateX(100%); }
+  
+  .modal-overlay { transition: opacity 0.3s ease; }
+  .modal-content { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease; }
+  .modal-hidden { opacity: 0; pointer-events: none; }
+  .modal-hidden .modal-content { transform: scale(0.95) translateY(10px); }
+
+  .pay-tab { transition: all 0.25s ease; }
+  .pay-tab.active { background: #1B4D2E; color: #FFFFFF; box-shadow: 0 4px 14px rgba(27,77,46,0.3); }
+
+  .card-preview {
+    background: linear-gradient(135deg, #1E2923 0%, #1B4D2E 100%);
+    color: white;
+    box-shadow: 0 10px 25px -5px rgba(27, 77, 46, 0.4);
+  }
+  
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F4F7F4; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+</style>
+</head>
+
+<body class="antialiased selection:bg-canaLight/30 selection:text-gray-900 font-sans bg-[#F9FBF9] text-gray-800">
+
+<!-- ======================= HEADER ======================= -->
+<header class="glass-header fixed top-0 inset-x-0 z-40 border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <img src="assets/images/logo.png" alt="Engenho Nobre" class="h-10 w-auto transition-transform group-hover:scale-105">
+      <span class="text-gray-900 font-bold tracking-wide text-lg hidden sm:inline">Engenho Nobre</span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-gray-600 text-sm font-medium">
+      <a href="index.html" class="hover:text-canaLight transition-colors">Início</a>
+      <a href="index.html#sobre" class="hover:text-canaLight transition-colors">A História</a>
+      <a href="produtos.html" class="text-canaGreen font-semibold">Loja & Catálogo</a>
+      <a href="index.html#contato" class="hover:text-canaLight transition-colors">Contato</a>
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center bg-gray-100 border border-gray-200 rounded-full px-4 py-1.5 focus-within:border-canaLight transition-colors">
+        <input id="search-input" type="text" placeholder="Buscar cachaça ou rum..."
+          class="bg-transparent text-gray-900 placeholder-gray-400 text-sm outline-none w-44 lg:w-60">
+      </div>
+
+      <button id="cart-toggle" aria-label="Abrir carrinho" class="relative flex items-center justify-center w-11 h-11 rounded-full bg-canaLight text-white hover:bg-canaGreen transition-all shadow-md hover:scale-105">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span id="cart-count" class="absolute -top-1 -right-1 bg-canaGreen text-white text-[11px] font-bold leading-none w-5 h-5 rounded-full flex items-center justify-center border-2 border-white hidden shadow">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= HERO BANNER ======================= -->
+<section class="relative bg-white text-gray-900 pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden border-b border-gray-100">
+  <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#2CA03B_1px,transparent_1px)] [background-size:24px_24px]"></div>
+  <div class="max-w-7xl mx-auto px-5 md:px-10 relative z-10">
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-canaLight/10 border border-canaLight/30 text-canaGreen text-xs font-semibold uppercase tracking-wider mb-4">
+        <span>Tradição e Rigor Artesanal</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+        A excelência do engenho no seu copo.
+      </h1>
+      <p class="text-gray-600 text-lg leading-relaxed">
+        Selecione nossas cachaças premiadas e rums artesanais envelhecidos. Clique em qualquer rótulo para ver os detalhes completos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CATÁLOGO DE PRODUTOS ======================= -->
+<main class="max-w-7xl mx-auto px-5 md:px-10 py-16">
+  <div class="flex items-center justify-between flex-wrap gap-4 mb-10 pb-6 border-b border-gray-200">
+    <div class="flex gap-2 flex-wrap" id="filter-buttons">
+      <button data-filter="todas" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-canaGreen text-white shadow-sm transition-all">Todas</button>
+      <button data-filter="branca" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 transition-all">Brancas</button>
+      <button data-filter="envelhecida" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 transition-all">Envelhecidas</button>
+      <button data-filter="rum" class="filter-btn px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 transition-all">Runs</button>
+    </div>
+    <div class="text-sm text-gray-500 font-medium" id="product-counter">Exibindo catálogo completo</div>
+  </div>
+
+  <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+  <div id="no-results" class="hidden text-center py-20">
+    <p class="text-2xl text-gray-400 font-bold">Nenhum rótulo encontrado.</p>
+    <p class="text-gray-500 text-sm mt-1">Tente buscar por outro termo ou categoria.</p>
+  </div>
+</main>
+
+<!-- ======================= MODAL DE DETALHES ======================= -->
+<div id="product-modal" class="modal-overlay modal-hidden fixed inset-0 z-[70] flex items-center justify-center px-4 py-8 bg-gray-900/60 backdrop-blur-md">
+  <div class="modal-backdrop absolute inset-0" id="product-modal-backdrop"></div>
+  <div class="modal-content relative bg-white rounded-[32px] w-full max-w-3xl p-8 md:p-10 max-h-[92vh] overflow-y-auto shadow-2xl border border-gray-100">
+    <button id="product-modal-close" aria-label="Fechar" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold transition-colors z-10 shadow-sm">✕</button>
+    
+    <div class="grid md:grid-cols-12 gap-8 items-center">
+      <div class="md:col-span-5 bg-gray-50 rounded-2xl p-6 h-80 md:h-96 flex items-center justify-center relative overflow-hidden border border-gray-100 shadow-inner">
+        <div class="absolute inset-0 bg-gradient-to-b from-canaLight/10 to-transparent rounded-2xl opacity-60"></div>
+        <img id="modal-img" src="" alt="" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-500 relative z-10">
+      </div>
+
+      <div class="md:col-span-7 space-y-5">
+        <div>
+          <span id="modal-category" class="inline-block px-3.5 py-1 rounded-full bg-canaLight/10 text-canaGreen text-xs font-bold uppercase tracking-wider mb-2">Categoria</span>
+          <h2 id="modal-name" class="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight">Nome do Produto</h2>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 py-3 border-y border-gray-100 text-sm">
+          <div>
+            <span class="text-xs text-gray-400 block font-medium">Volume da Garrafa</span>
+            <span id="modal-volume" class="font-bold text-gray-900 text-base">500ml</span>
+          </div>
+          <div>
+            <span class="text-xs text-gray-400 block font-medium">Origem & Engenho</span>
+            <span class="font-bold text-gray-900 text-base">Cruz do Espírito Santo - PB</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1.5">Notas Sensoriais & Processo</p>
+          <p id="modal-notes" class="text-gray-600 text-sm leading-relaxed bg-gray-50 p-4 rounded-2xl border border-gray-100">Notas detalhadas do produto.</p>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-gray-100 gap-4">
+          <div>
+            <span class="text-xs text-gray-400 block font-medium">Investimento</span>
+            <span id="modal-price" class="text-3xl font-extrabold text-gray-900">R$ 0,00</span>
+          </div>
+          <button id="modal-add-btn" class="px-7 py-4 rounded-2xl bg-canaGreen hover:bg-canaLight text-white font-bold text-sm transition-all shadow-md hover:scale-105 flex items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span>Adicionar à Sacola</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= CARRINHO LATERAL ======================= -->
+<div id="cart-overlay" class="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<aside id="cart-panel" class="cart-panel closed fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white z-50 shadow-2xl flex flex-col">
+  <div class="flex items-center justify-between px-7 py-6 border-b border-gray-100 bg-gray-50">
+    <div class="flex items-center gap-3">
+      <h3 class="text-2xl text-gray-900 font-bold">Sua Sacola</h3>
+      <span id="cart-badge-count" class="bg-canaLight text-white font-bold text-xs px-2.5 py-1 rounded-full">0 itens</span>
+    </div>
+    <button id="cart-close" aria-label="Fechar" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200/60 hover:bg-gray-200 text-gray-800 transition-colors font-bold">✕</button>
+  </div>
+
+  <div id="cart-items" class="flex-1 overflow-y-auto px-7 py-6 space-y-4"></div>
+  <div id="cart-empty" class="flex-1 flex flex-col items-center justify-center text-gray-400 text-sm px-6 text-center">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-gray-300 mb-3"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    <p class="text-lg text-gray-600 font-bold">Sua sacola está vazia</p>
+    <p class="text-xs text-gray-400 mt-1">Adicione rótulos incríveis do nosso engenho para iniciar o pedido.</p>
+  </div>
+
+  <div class="border-t border-gray-100 px-7 py-6 bg-gray-50/50">
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-gray-500 font-medium">Subtotal da compra</span>
+      <span id="cart-subtotal" class="text-2xl font-extrabold text-gray-900">R$ 0,00</span>
+    </div>
+    <button id="checkout-btn" class="w-full py-4 rounded-2xl bg-canaLight hover:bg-canaGreen text-white font-bold tracking-wide transition-all shadow-md hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2" disabled>
+      <span>Avançar para Checkout</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+</aside>
+
+<!-- ======================= CHECKOUT MASTER ======================= -->
+<div id="checkout-modal" class="modal-overlay modal-hidden fixed inset-0 z-[80] flex items-center justify-center px-4 py-6 bg-gray-950/70 backdrop-blur-md">
+  <div class="modal-backdrop absolute inset-0" id="checkout-backdrop"></div>
+  <div class="modal-content relative bg-white rounded-[32px] w-full max-w-3xl p-6 sm:p-10 max-h-[95vh] overflow-y-auto shadow-2xl border border-gray-100">
+    
+    <!-- Cabeçalho de Segurança -->
+    <div class="flex items-center justify-between pb-6 border-b border-gray-100 mb-8">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-canaGreen">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] font-extrabold text-canaGreen uppercase tracking-wider bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">Ambiente 100% Seguro</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-0.5">Finalizar Pedido Oficial</h3>
+        </div>
+      </div>
+      <button id="checkout-close" aria-label="Fechar" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold transition-colors">✕</button>
+    </div>
+
+    <!-- Resumo dos Valores -->
+    <div id="checkout-summary" class="bg-gray-50 border border-gray-200/80 rounded-2xl p-4 mb-8 text-xs sm:text-sm space-y-1.5 shadow-sm"></div>
+
+    <!-- PASSO 1: IDENTIFICAÇÃO -->
+    <div class="space-y-4 mb-8">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-canaGreen text-white text-xs font-bold flex items-center justify-center">1</span>
+        <h4 class="text-sm font-extrabold text-gray-900 uppercase tracking-wider">Identificação do Comprador</h4>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-3.5">
+        <input required type="text" id="ck-name" placeholder="Nome Completo *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <input required type="tel" id="ck-phone" placeholder="WhatsApp com DDD (Ex: 83 99681-8192) *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+      </div>
+      <input type="email" id="ck-email" placeholder="E-mail para Nota Fiscal e Rastreio" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+    </div>
+
+    <!-- PASSO 2: ENDEREÇO DE ENTREGA -->
+    <div class="space-y-4 mb-8">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-canaGreen text-white text-xs font-bold flex items-center justify-center">2</span>
+        <h4 class="text-sm font-extrabold text-gray-900 uppercase tracking-wider">Endereço de Entrega</h4>
+      </div>
+      
+      <div class="grid sm:grid-cols-3 gap-3.5">
+        <input required type="text" id="ck-cep" placeholder="CEP *" maxlength="9" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <div class="sm:col-span-2">
+          <input required type="text" id="ck-street" placeholder="Nome da Rua / Avenida *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+        <input required type="text" id="ck-number" placeholder="Número *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <input type="text" id="ck-complement" placeholder="Complemento" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <input required type="text" id="ck-neighborhood" placeholder="Bairro *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <input required type="text" id="ck-city" placeholder="Cidade / UF *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+      </div>
+    </div>
+
+    <!-- PASSO 3: FORMA DE PAGAMENTO -->
+    <div class="space-y-4 mb-8">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded-full bg-canaGreen text-white text-xs font-bold flex items-center justify-center">3</span>
+        <h4 class="text-sm font-extrabold text-gray-900 uppercase tracking-wider">Forma de Pagamento</h4>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2 rounded-2xl bg-gray-100 p-1.5">
+        <button type="button" data-pay="pix" class="pay-tab active py-3 px-2 rounded-xl text-xs sm:text-sm font-bold flex flex-col sm:flex-row items-center justify-center gap-1.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span>PIX (Instantâneo)</span>
+        </button>
+        <button type="button" data-pay="cartao" class="pay-tab py-3 px-2 rounded-xl text-xs sm:text-sm font-bold text-gray-600 flex flex-col sm:flex-row items-center justify-center gap-1.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Crédito / Débito</span>
+        </button>
+        <button type="button" data-pay="boleto" class="pay-tab py-3 px-2 rounded-xl text-xs sm:text-sm font-bold text-gray-600 flex flex-col sm:flex-row items-center justify-center gap-1.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h18v16H3zM8 8h2v8H8zm4 0h2v8h-2zm4 0h2v8h-2z"/></svg>
+          <span>Boleto Bancário</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PAINEL PIX AVANÇADO -->
+    <div id="pay-panel-pix" class="pay-panel space-y-5 bg-emerald-50/40 border border-emerald-200/60 rounded-3xl p-6">
+      <div class="flex flex-col sm:flex-row items-center gap-5">
+        <div class="bg-white p-3 rounded-2xl border border-emerald-200 shadow-sm shrink-0 flex items-center justify-center">
+          <svg width="120" height="120" viewBox="0 0 100 100" class="text-gray-900">
+            <rect width="100" height="100" fill="white"/>
+            <path d="M10 10h30v30H10zM60 10h30v30H60zM10 60h30v30H10z" fill="currentColor"/>
+            <path d="M20 20h10v10H20zM70 20h10v10H70zM20 70h10v10H20z" fill="white"/>
+            <path d="M45 10h10v15H45zM10 45h15v10H10zM85 45h5v20h-5zM45 45h10v10H45zM60 60h10v10H60zM75 75h15v15H75zM45 75h15v15H45z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="space-y-2 flex-1 text-center sm:text-left">
+          <p class="text-xs font-bold text-emerald-900 uppercase tracking-wide">Chave PIX Oficial (E-mail)</p>
+          <div class="flex items-center justify-between gap-2 bg-white p-3 rounded-xl border border-emerald-200 shadow-sm">
+            <code id="pix-key" class="text-xs sm:text-sm text-gray-900 font-mono font-bold select-all truncate">murilovcoelho@gmail.com</code>
+            <button id="pix-copy" class="text-xs font-bold bg-canaLight hover:bg-canaGreen text-white px-3 py-1.5 rounded-lg transition-colors shrink-0">Copiar Chave</button>
+          </div>
+          <p class="text-[11px] text-emerald-800/80 leading-relaxed">Escaneie o QR Code ou copie a chave acima no aplicativo do seu banco.</p>
+        </div>
+      </div>
+      <button id="checkout-send-pix" class="w-full py-4 rounded-2xl bg-canaLight hover:bg-canaGreen text-white font-bold tracking-wide transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12 0-3.2-1.3-6.2-3.5-8.3zM12 21.8c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.7 9.7 0 0 1 2.2 12c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8z"/></svg>
+        <span>Já Realizei o PIX — Enviar Pedido</span>
+      </button>
+    </div>
+
+    <!-- PAINEL CARTÃO DE CRÉDITO / DÉBITO -->
+    <div id="pay-panel-cartao" class="pay-panel hidden space-y-5 bg-gray-50 border border-gray-200/80 rounded-3xl p-6">
+      <div class="card-preview w-full max-w-sm mx-auto rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-between h-48">
+        <div class="flex justify-between items-center">
+          <span class="text-xs font-mono tracking-widest text-emerald-300 uppercase">Engenho Pay</span>
+          <span class="text-sm font-bold tracking-wider">CRÉDITO / DÉBITO</span>
+        </div>
+        <div id="preview-number" class="font-mono text-lg tracking-widest text-emerald-100">•••• •••• •••• ••••</div>
+        <div class="flex justify-between items-end">
+          <div>
+            <span class="text-[9px] text-gray-400 block uppercase">Titular</span>
+            <span id="preview-name" class="text-xs font-bold tracking-wide truncate max-w-[180px] block">NOME DO TITULAR</span>
+          </div>
+          <div>
+            <span class="text-[9px] text-gray-400 block uppercase">Validade</span>
+            <span id="preview-expiry" class="text-xs font-mono font-bold">MM/AA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3.5">
+        <input type="text" id="card-name" placeholder="Nome impresso no cartão *" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors">
+        <input type="text" id="card-number" placeholder="Número do Cartão *" maxlength="19" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors font-mono">
+        <div class="grid grid-cols-2 gap-3.5">
+          <input type="text" id="card-expiry" placeholder="Validade (MM/AA) *" maxlength="5" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors font-mono">
+          <input type="text" id="card-cvv" placeholder="CVV *" maxlength="4" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium transition-colors font-mono">
+        </div>
+        <select id="card-installments" class="w-full px-4 py-3.5 rounded-xl border border-gray-200 focus:border-canaLight outline-none text-sm bg-white font-medium text-gray-700 transition-colors">
+          <option value="debito">Débito (À vista)</option>
+          <option value="1">Crédito - À vista (Sem juros)</option>
+          <option value="2">Crédito - 2x sem juros</option>
+          <option value="3">Crédito - 3x sem juros</option>
+          <option value="6">Crédito - 6x sem juros</option>
+        </select>
+      </div>
+
+      <button id="checkout-send-card" class="w-full py-4 rounded-2xl bg-canaGreen hover:bg-canaLight text-white font-bold tracking-wide transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <span>Processar Pagamento</span>
+      </button>
+    </div>
+
+    <!-- PAINEL BOLETO -->
+    <div id="pay-panel-boleto" class="pay-panel hidden space-y-5 bg-amber-50/50 border border-amber-200/80 rounded-3xl p-6 text-center">
+      <div class="max-w-md mx-auto space-y-2">
+        <p class="text-sm font-bold text-amber-900">Emissão de Boleto Bancário Registrado</p>
+        <p class="text-xs text-amber-900/70 leading-relaxed">O boleto será gerado com vencimento para 2 dias úteis. A confirmação da compra ocorrerá após a compensação bancária.</p>
+      </div>
+      <button id="checkout-send-boleto" class="w-full py-4 rounded-2xl bg-canaLight hover:bg-canaGreen text-white font-bold tracking-wide transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h18v16H3zM8 8h2v8H8zm4 0h2v8h-2zm4 0h2v8h-2z"/></svg>
+        <span>Gerar Boleto & Enviar Pedido</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="bg-gray-900 text-white border-t border-gray-800 pt-20 pb-12">
+  <div class="max-w-7xl mx-auto px-5 md:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
+      <div class="lg:col-span-2 space-y-5">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="Engenho Nobre" class="h-12 w-auto">
+          <span class="text-2xl font-bold tracking-wide">Engenho Nobre</span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+          O primeiro engenho com bioconstrução da Paraíba. Cachaças artesanais premiadas nacional e internacionalmente, produzidas com rigor técnico e respeito ao meio ambiente.
+        </p>
+        <div class="pt-2 text-xs text-gray-400 space-y-1">
+          <p>📍 PB 004, Km 20, S/N, Zona Rural — Cruz do Espírito Santo, PB</p>
+          <p>📄 CNPJ: 00.000.000/0001-00</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-base font-bold text-white uppercase tracking-wider mb-5">Navegação</p>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="index.html#premios" class="hover:text-canaLight transition-colors">Prêmios</a></li>
+          <li><a href="index.html#sobre" class="hover:text-canaLight transition-colors">A História</a></li>
+          <li><a href="index.html#bioconstrucao" class="hover:text-canaLight transition-colors">Bioconstrução</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Loja & Catálogo</a></li>
+          <li><a href="index.html#avaliacoes" class="hover:text-canaLight transition-colors">Avaliações</a></li>
+          <li><a href="index.html#contato" class="hover:text-canaLight transition-colors">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-base font-bold text-white uppercase tracking-wider mb-5">Destaques</p>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Nobre Cristal</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Arretada Vaquejada</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Nobre Umburana</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Rum Corsário</a></li>
+          <li><a href="produtos.html" class="hover:text-canaLight transition-colors">Catálogo Completo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-base font-bold text-white uppercase tracking-wider mb-5">Atendimento</p>
+        <p class="text-sm text-gray-400 leading-relaxed mb-4">
+          Agende sua visita ao engenho ou tire dúvidas diretamente com o Mestre Alambiqueiro.
+        </p>
+        <a href="https://wa.me/5583996818192" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-canaGreen hover:bg-canaLight text-white font-bold text-xs transition-all shadow-md">
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left text-xs text-gray-400">
+      <p>© 2026 Engenho Nobre. Todos os direitos reservados.</p>
+      <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800 border border-gray-700 text-amber-300 font-medium">
+        <span>⚠️ Beba com moderação. Venda proibida para menores de 18 anos.</span>
+      </div>
+      <p>Desenvolvido para Mestre Murilo Vilela Coelho</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const products = [
+    { id: 'sensacoes-carvalho', name: 'Nobre Sensações Carvalho', category: 'envelhecida', price: 55.00, volume: '380ml', notes: 'Cachaça com graduação alcoólica mais baixa (39% vol.). Essencialmente leve, macia e elegante, possui leve toque amadeirado sem perder a essência da cachaça para destacar aromas e sabores. Foi premiada com Medalha de Ouro no Concurso de Vinhos e Destilados do Brasil em 2021.', img: 'assets/images/nobrecarvalho.jpeg' },
+    { id: 'sensacoes-freijo', name: 'Nobre Sensações Freijó', category: 'envelhecida', price: 55.00, volume: '380ml', notes: 'Cachaça com graduação alcoólica mais baixa (39% vol.), leve, macia e elegante, com leve toque amadeirado. Foi premiada com Medalha de Prata no Concurso de Vinhos e Destilados do Brasil em 2023.', img: 'assets/images/nobrefreijó.jpeg' },
+    { id: 'sensacoes-umburana', name: 'Nobre Sensações Umburana', category: 'envelhecida', price: 55.00, volume: '380ml', notes: 'Cachaça com graduação alcoólica mais baixa (39% vol.), leve, macia e elegante, com leve toque amadeirado. A versão Umburana foi premiada com Medalha de Prata no Concurso de Vinhos e Destilados do Brasil em 2021.', img: 'assets/images/nobreumburana.jpeg' },
+    { id: 'vaqueiro', name: 'Nobre Vaqueiro', category: 'envelhecida', price: 250.00, volume: '750ml', notes: 'Cachaça Extra Premium com envelhecimento de 4 anos (2 anos em barril de carvalho francês e 2 anos em barril de carvalho americano). Graduação alcoólica de 44% vol., com perfil macio e intenso.', img: 'assets/images/vaqueiro.jpeg' },
+    { id: 'arraia', name: 'Nobre Arraiá', category: 'envelhecida', price: 165.00, volume: '750ml', notes: 'Rótulo em xilogravura em resgate à festa junina raiz. Blend de cachaça envelhecida por 3 anos em carvalho europeu com cachaça envelhecida por 1 ano em bálsamo. Possui 41% de graduação alcoólica, perfil aromático com notas de mel e baunilha que destacam sua doçura e toques de especiarias.', img: 'assets/images/nobrearraia.jpeg' },
+    { id: 'maracatu', name: 'Nobre Maracatu', category: 'envelhecida', price: 165.00, volume: '750ml', notes: 'Blend de 3 cachaças: a primeira é um blend de jaqueira e bálsamo descansado por 1 ano e meio em barril de carvalho americano; a segunda é uma cachaça envelhecida por 3 anos em carvalho europeu finalizada por 6 meses em barril de carvalho americano novo; e a terceira é uma cachaça premium de umburana vinda de barril usado finalizada por 3 meses em barril de umburana novo. Aroma convidativo, cor vibrante e sabor complexo.', img: 'assets/images/maracatu.jpeg' },
+    { id: 'cristal-500', name: 'Nobre Cristal', category: 'branca', price: 45.00, volume: '500ml', notes: 'Branquinha arretada, leveduras selecionadas nordestinas, descansa 8 meses em inox.', img: 'assets/images/nobrecristal.jpeg' },
+    { id: 'arretada-vaquejada-500', name: 'Arretada Vaquejada', category: 'envelhecida', price: 85.00, volume: '500ml', notes: 'Blend de cachaças envelhecidas por 3 anos em carvalho europeu, jaqueira e jequitibá rosa.', img: 'assets/images/nobrearretada500.jpeg' },
+    { id: 'umburana-500', name: 'Nobre Umburana', category: 'envelhecida', price: 55.00, volume: '500ml', notes: '100% umburana, notas de baunilha e canela, medalha de ouro em 2020.', img: 'assets/images/umburana.jpeg' },
+    { id: 'arretada-vaquejada-750', name: 'Arretada Vaquejada', category: 'envelhecida', price: 125.00, volume: '750ml', notes: 'Blend complexo de carvalho europeu, jaqueira e jequitibá rosa.', img: 'assets/images/nobrearretada.jpeg' },
+    { id: 'raiz-48', name: 'Nobre Raíz 48', category: 'branca', price: 100.00, volume: '750ml', notes: '48% vol., extremamente aromática e equilibrada. Lote 1 com apenas 400 garrafas.', img: 'assets/images/raiz48.jpeg' },
+    { id: 'ocean', name: 'Nobre Ocean', category: 'envelhecida', price: 100.00, volume: '750ml', notes: 'Blend em bálsamo e umburana, toque sutil para retirar o amargor final.', img: 'assets/images/ocean.jpeg' },
+    { id: 'rum-corsario-40', name: 'Rum Corsário 40%', category: 'rum', price: 140.00, volume: '750ml', notes: 'Envelhecido por 2 anos em carvalho americano novo. Mais leve, adocicado e defumado.', img: 'assets/images/rumcorsario.jpeg' },
+    { id: 'rum-corsario-50', name: 'Rum Corsário 50%', category: 'rum', price: 180.00, volume: '750ml', notes: 'Envelhecido por 2 anos em carvalho americano novo. Más intenso em aromas e sabores.', img: 'assets/images/rumcorsario50.jpeg' }
+  ];
+
+  const grid = document.getElementById('product-grid');
+  const noResults = document.getElementById('no-results');
+  const counterEl = document.getElementById('product-counter');
+
+  function money(v) { return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
+
+  function renderProducts(list) {
+    grid.innerHTML = '';
+    noResults.classList.toggle('hidden', list.length > 0);
+    counterEl.textContent = `Mostrando ${list.length} ${list.length === 1 ? 'rótulo' : 'rótulos'}`;
+    
+    list.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'bg-white text-gray-900 rounded-3xl p-6 border border-gray-200 shadow-sm hover:shadow-xl hover:border-canaLight transition-all duration-300 flex flex-col justify-between group cursor-pointer';
+      card.innerHTML = `
+        <div class="product-trigger" data-id="${p.id}">
+          <div class="bg-gray-50 rounded-2xl py-6 mb-6 h-56 flex items-center justify-center relative overflow-hidden border border-gray-100">
+            <div class="absolute inset-0 bg-gradient-to-b from-canaLight/5 to-transparent rounded-2xl opacity-60"></div>
+            <img src="${p.img}" alt="${p.name}" class="max-h-full w-auto object-contain drop-shadow-[0_15px_15px_rgba(0,0,0,0.1)] group-hover:scale-110 transition-transform duration-500 relative z-10">
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 group-hover:text-canaGreen transition-colors">${p.name}</h3>
+          <p class="text-gray-600 text-sm mt-2 leading-relaxed line-clamp-2">${p.notes}</p>
+          <div class="mt-4">
+            <span class="text-2xl font-extrabold text-gray-900">${money(p.price)}</span>
+          </div>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-wider product-trigger hover:text-gray-900 transition-colors" data-id="${p.id}">VER DETALHES →</span>
+          <button data-id="${p.id}" class="add-to-cart px-4 py-2 rounded-xl bg-canaLight hover:bg-canaGreen text-white font-bold text-xs transition-all shadow-sm">
+            Adicionar
+          </button>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+  renderProducts(products);
+
+  const productModal = document.getElementById('product-modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalCategory = document.getElementById('modal-category');
+  const modalName = document.getElementById('modal-name');
+  const modalVolume = document.getElementById('modal-volume');
+  const modalNotes = document.getElementById('modal-notes');
+  const modalPrice = document.getElementById('modal-price');
+  const modalAddBtn = document.getElementById('modal-add-btn');
+  let activeModalProductId = null;
+
+  function openProductModal(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+    activeModalProductId = p.id;
+    modalImg.src = p.img;
+    modalImg.alt = p.name;
+    modalCategory.textContent = p.category.toUpperCase();
+    modalName.textContent = p.name;
+    modalVolume.textContent = p.volume;
+    modalNotes.textContent = p.notes;
+    modalPrice.textContent = money(p.price);
+    productModal.classList.remove('modal-hidden');
+  }
+
+  function closeProductModal() {
+    productModal.classList.add('modal-hidden');
+  }
+
+  document.getElementById('product-modal-close').addEventListener('click', closeProductModal);
+  document.getElementById('product-modal-backdrop').addEventListener('click', closeProductModal);
+
+  modalAddBtn.addEventListener('click', () => {
+    if (activeModalProductId) {
+      addToCart(activeModalProductId);
+      closeProductModal();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.product-trigger');
+    if (trigger) {
+      openProductModal(trigger.dataset.id);
+      return;
+    }
+    const addBtn = e.target.closest('.add-to-cart');
+    if (addBtn) {
+      addToCart(addBtn.dataset.id);
+      e.stopPropagation();
+    }
+    const qtyBtn = e.target.closest('.qty-btn');
+    if (qtyBtn) changeQty(qtyBtn.dataset.id, Number(qtyBtn.dataset.delta));
+  });
+
+  document.getElementById('filter-buttons').addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('bg-canaGreen', 'text-white', 'shadow-sm');
+      b.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+    });
+    btn.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+    btn.classList.add('bg-canaGreen', 'text-white', 'shadow-sm');
+    const f = btn.dataset.filter;
+    renderProducts(f === 'todas' ? products : products.filter(p => p.category === f));
+  });
+
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase().trim();
+    const filtered = products.filter(p => p.name.toLowerCase().includes(term) || p.notes.toLowerCase().includes(term));
+    renderProducts(term ? filtered : products);
+  });
+
+  let cart = {};
+  const cartToggle = document.getElementById('cart-toggle');
+  const cartPanel = document.getElementById('cart-panel');
+  const cartOverlay = document.getElementById('cart-overlay');
+  const cartItemsEl = document.getElementById('cart-items');
+  const cartEmptyEl = document.getElementById('cart-empty');
+  const cartSubtotalEl = document.getElementById('cart-subtotal');
+  const cartCountEl = document.getElementById('cart-count');
+  const cartBadgeCount = document.getElementById('cart-badge-count');
+  const checkoutBtn = document.getElementById('checkout-btn');
+
+  function openCart() {
+    cartPanel.classList.remove('closed');
+    cartOverlay.classList.remove('opacity-0', 'pointer-events-none');
+  }
+  function closeCart() {
+    cartPanel.classList.add('closed');
+    cartOverlay.classList.add('opacity-0', 'pointer-events-none');
+  }
+  cartToggle.addEventListener('click', openCart);
+  document.getElementById('cart-close').addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+
+  function addToCart(id) { cart[id] = (cart[id] || 0) + 1; renderCart(); openCart(); }
+  function changeQty(id, delta) {
+    if (!cart[id]) return;
+    cart[id] += delta;
+    if (cart[id] <= 0) delete cart[id];
+    renderCart();
+  }
+
+  function renderCart() {
+    const ids = Object.keys(cart);
+    cartItemsEl.innerHTML = '';
+    cartEmptyEl.classList.toggle('hidden', ids.length > 0);
+    cartItemsEl.classList.toggle('hidden', ids.length === 0);
+
+    let subtotal = 0, totalQty = 0;
+    ids.forEach(id => {
+      const p = products.find(x => x.id === id);
+      const qty = cart[id];
+      subtotal += p.price * qty;
+      totalQty += qty;
+      const row = document.createElement('div');
+      row.className = 'flex items-center gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-100';
+      row.innerHTML = `
+        <div class="w-14 h-14 bg-white rounded-xl flex items-center justify-center shrink-0 border border-gray-200/60 p-1">
+          <img src="${p.img}" alt="${p.name}" class="h-10 w-auto object-contain">
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-bold text-gray-900 truncate">${p.name}</p>
+          <p class="text-xs text-gray-500">${money(p.price)} un</p>
+        </div>
+        <div class="flex items-center gap-2 bg-white px-2 py-1 rounded-xl border border-gray-200">
+          <button class="qty-btn w-6 h-6 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold" data-id="${id}" data-delta="-1">−</button>
+          <span class="w-5 text-center text-sm font-bold">${qty}</span>
+          <button class="qty-btn w-6 h-6 rounded-lg text-gray-600 hover:bg-gray-100 flex items-center justify-center font-bold" data-id="${id}" data-delta="1">+</button>
+        </div>`;
+      cartItemsEl.appendChild(row);
+    });
+
+    cartSubtotalEl.textContent = money(subtotal);
+    checkoutBtn.disabled = ids.length === 0;
+    if (totalQty > 0) {
+      cartCountEl.textContent = totalQty;
+      cartCountEl.classList.remove('hidden');
+      cartBadgeCount.textContent = `${totalQty} ${totalQty === 1 ? 'item' : 'itens'}`;
+    } else {
+      cartCountEl.classList.add('hidden');
+      cartBadgeCount.textContent = '0 itens';
+    }
+  }
+
+  const checkoutModal = document.getElementById('checkout-modal');
+  const checkoutSummary = document.getElementById('checkout-summary');
+  const WHATSAPP_NUMBER = '5583996818192';
+
+  function buildSummary() {
+    let lines = [], subtotal = 0;
+    Object.keys(cart).forEach(id => {
+      const p = products.find(x => x.id === id);
+      const qty = cart[id];
+      subtotal += p.price * qty;
+      lines.push(`${qty}x ${p.name}`);
+    });
+    return { lines, subtotal };
+  }
+
+  checkoutBtn.addEventListener('click', () => {
+    const { subtotal } = buildSummary();
+
+    checkoutSummary.innerHTML = `
+      <div class="flex justify-between items-center font-bold text-gray-900 mb-1">
+        <span>Itens na Sacola (${Object.keys(cart).length}):</span>
+        <span>${money(subtotal)}</span>
+      </div>
+      <div class="pt-2 mt-2 border-t border-gray-200 flex justify-between items-center font-extrabold text-base text-gray-900">
+        <span>Total Geral:</span>
+        <span class="text-canaGreen">${money(subtotal)}</span>
+      </div>`;
+    checkoutModal.classList.remove('modal-hidden');
+    closeCart();
+  });
+
+  function closeCheckout() { checkoutModal.classList.add('modal-hidden'); }
+  document.getElementById('checkout-close').addEventListener('click', closeCheckout);
+  document.getElementById('checkout-backdrop').addEventListener('click', closeCheckout);
+
+  const cepInput = document.getElementById('ck-cep');
+  
+  cepInput.addEventListener('input', (e) => {
+    let val = e.target.value.replace(/\D/g, '');
+    if (val.length > 5) {
+      val = val.substring(0, 5) + '-' + val.substring(5, 8);
+    }
+    e.target.value = val;
+  });
+
+  cepInput.addEventListener('blur', async (e) => {
+    const cep = e.target.value.replace(/\D/g, '');
+    if (cep.length === 8) {
+      try {
+        const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+        const data = await res.json();
+        
+        if (!data.erro) {
+          document.getElementById('ck-street').value = data.logradouro || '';
+          document.getElementById('ck-neighborhood').value = data.bairro || '';
+          document.getElementById('ck-city').value = `${data.localidade} - ${data.uf}`;
+          document.getElementById('ck-number').focus();
+        } else {
+          alert('CEP não encontrado. Por favor, verifique e tente novamente.');
+        }
+      } catch (err) {
+        console.error('Erro ao buscar o CEP:', err);
+      }
+    }
+  });
+
+  document.querySelectorAll('.pay-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active', 'bg-canaGreen', 'text-white'));
+      document.querySelectorAll('.pay-tab').forEach(t => t.classList.add('text-gray-600'));
+      tab.classList.add('active');
+      tab.classList.remove('text-gray-600');
+      const mode = tab.dataset.pay;
+      document.getElementById('pay-panel-pix').classList.toggle('hidden', mode !== 'pix');
+      document.getElementById('pay-panel-cartao').classList.toggle('hidden', mode !== 'cartao');
+      document.getElementById('pay-panel-boleto').classList.toggle('hidden', mode !== 'boleto');
+    });
+  });
+
+  document.getElementById('pix-copy').addEventListener('click', () => {
+    const key = document.getElementById('pix-key').textContent;
+    navigator.clipboard.writeText(key).then(() => {
+      const btn = document.getElementById('pix-copy');
+      btn.textContent = 'Copiado!';
+      setTimeout(() => btn.textContent = 'Copiar Chave', 2000);
+    });
+  });
+
+  const inputCardNum = document.getElementById('card-number');
+  const inputCardName = document.getElementById('card-name');
+  const inputCardExpiry = document.getElementById('card-expiry');
+
+  inputCardNum.addEventListener('input', (e) => {
+    let val = e.target.value.replace(/\D/g, '').substring(0, 16);
+    e.target.value = val.match(/.{1,4}/g)?.join(' ') || '';
+    document.getElementById('preview-number').textContent = e.target.value || '•••• •••• •••• ••••';
+  });
+
+  inputCardName.addEventListener('input', (e) => {
+    document.getElementById('preview-name').textContent = e.target.value.toUpperCase() || 'NOME DO TITULAR';
+  });
+
+  inputCardExpiry.addEventListener('input', (e) => {
+    let val = e.target.value.replace(/\D/g, '').substring(0, 4);
+    if (val.length >= 3) val = val.substring(0, 2) + '/' + val.substring(2);
+    e.target.value = val;
+    document.getElementById('preview-expiry').textContent = val || 'MM/AA';
+  });
+
+  function validateAddressAndData() {
+    const name = document.getElementById('ck-name').value.trim();
+    const phone = document.getElementById('ck-phone').value.trim();
+    const cep = document.getElementById('ck-cep').value.trim();
+    const street = document.getElementById('ck-street').value.trim();
+    const number = document.getElementById('ck-number').value.trim();
+    const neighborhood = document.getElementById('ck-neighborhood').value.trim();
+    const city = document.getElementById('ck-city').value.trim();
+
+    if (!name || !phone || !cep || !street || !number || !neighborhood || !city) {
+      alert('Por favor, preencha todos os campos obrigatórios do comprador e do endereço de entrega.');
+      return null;
+    }
+
+    return {
+      name,
+      phone,
+      email: document.getElementById('ck-email').value.trim(),
+      address: `${street}, Nº ${number} ${document.getElementById('ck-complement').value ? '- ' + document.getElementById('ck-complement').value : ''}, Bairro: ${neighborhood}, ${city} (CEP: ${cep})`
+    };
+  }
+
+  function processCheckoutIntegration(paymentMethod, extraData = {}) {
+    const customer = validateAddressAndData();
+    if (!customer) return;
+
+    const { lines, subtotal } = buildSummary();
+
+    const apiPayload = {
+      customer,
+      items: cart,
+      subtotal,
+      paymentMethod,
+      extraData
+    };
+
+    console.log("Payload pronto para API:", apiPayload);
+
+    let msg = [
+      `*📦 Novo Pedido - Engenho Nobre*`,
+      ``,
+      `*Cliente:* ${customer.name}`,
+      `*WhatsApp:* ${customer.phone}`,
+      `*Endereço de Entrega:*`,
+      `${customer.address}`,
+      ``,
+      `*Itens:*`,
+      ...lines,
+      ``,
+      `*Total:* ${money(subtotal)}`,
+      `*(O frete será calculado e informado pelo atendente)*`,
+      `*Pagamento:* ${paymentMethod}`
+    ];
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg.join('\n'))}`, '_blank');
+    closeCheckout();
+  }
+
+  document.getElementById('checkout-send-pix').addEventListener('click', () => processCheckoutIntegration('PIX'));
+  document.getElementById('checkout-send-boleto').addEventListener('click', () => processCheckoutIntegration('Boleto Bancário'));
+  document.getElementById('checkout-send-card').addEventListener('click', () => {
+    const cardName = document.getElementById('card-name').value.trim();
+    const cardNumber = document.getElementById('card-number').value.trim();
+    const cardExpiry = document.getElementById('card-expiry').value.trim();
+    const cardCvv = document.getElementById('card-cvv').value.trim();
+
+    if (!cardName || !cardNumber || !cardExpiry || !cardCvv) {
+      alert('Preencha todos os dados do cartão de crédito ou débito.');
+      return;
+    }
+    
+    const installmentValue = document.getElementById('card-installments').value;
+    const paymentLabel = installmentValue === 'debito' ? 'Cartão de Débito' : 'Cartão de Crédito';
+    
+    processCheckoutIntegration(paymentLabel, { installments: installmentValue });
+  });
+</script>
+<!-- ======================= COOKIE CONSENT BANNER ======================= -->
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:max-w-sm z-[100] bg-white rounded-3xl p-6 border border-gray-200 shadow-2xl transform transition-transform duration-500 translate-y-full opacity-0 hidden">
+  <div class="flex items-start gap-4">
+    <div class="w-10 h-10 rounded-full bg-canaLight/10 flex items-center justify-center shrink-0 text-canaGreen">
+      <!-- Ícone de Cookie -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+        <path d="M8.5 8.5v.01"/><path d="M16 12.5v.01"/><path d="M12 16v.01"/><path d="M11 12.5v.01"/>
+      </svg>
+    </div>
+    <div class="space-y-3">
+      <h4 class="text-sm font-bold text-gray-900">Privacidade & Cookies</h4>
+      <p class="text-xs text-gray-600 leading-relaxed">
+        Utilizamos cookies para melhorar sua experiência em nosso site, personalizar o conteúdo e analisar nosso tráfego. Ao continuar navegando, você concorda com nossa política.
+      </p>
+      <div class="flex items-center gap-3 pt-2">
+        <button id="accept-cookies" class="w-full px-4 py-2.5 rounded-xl bg-canaGreen hover:bg-canaLight text-white font-bold text-xs transition-all shadow-sm">
+          Aceitar Todos
+        </button>
+        <button id="decline-cookies" class="w-full px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 font-bold text-xs transition-all shadow-sm">
+          Recusar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    const cookieStorageKey = 'engenhonobre_cookies_consent';
+
+    // Verifica se o cliente já respondeu antes
+    if (!localStorage.getItem(cookieStorageKey)) {
+      // Mostra o banner com animação subindo
+      cookieBanner.classList.remove('hidden');
+      setTimeout(() => {
+        cookieBanner.classList.remove('translate-y-full', 'opacity-0');
+      }, 100);
+    }
+
+    // Função para esconder com animação descendo
+    const hideBanner = () => {
+      cookieBanner.classList.add('translate-y-full', 'opacity-0');
+      setTimeout(() => {
+        cookieBanner.classList.add('hidden');
+      }, 500); // Tempo da transição
+    };
+
+    // Ações dos botões
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(cookieStorageKey, 'accepted');
+      hideBanner();
+    });
+
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem(cookieStorageKey, 'declined');
+      hideBanner();
+    });
+  });
+</script>
+<!-- ===================================================================== -->
+</body>
+</html>
